@@ -1,0 +1,145 @@
+/* One-viewport landing hero — warm, calm, editorial. */
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(2rem, 6vh, 4.5rem);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+  margin-bottom: 1.1rem;
+}
+
+.hero__eyebrow .urdu {
+  font-size: 1.15rem;
+  color: var(--color-heading);
+}
+
+.hero__eyebrow-sep {
+  color: var(--border-strong);
+}
+
+.hero__title {
+  margin-bottom: 1.25rem;
+}
+
+.hero__title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.hero__subtitle {
+  max-width: 34rem;
+  font-size: 1.075rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero__cta {
+  font-size: 1.02rem;
+  padding: 0.95rem 1.8rem;
+}
+
+.hero__meta {
+  margin-top: 1.1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  color: var(--color-text-muted);
+}
+
+.hero-art {
+  display: grid;
+  place-items: center;
+}
+
+.hero-art__scales {
+  width: min(100%, 380px);
+  height: auto;
+  filter: drop-shadow(0 18px 32px rgba(59, 42, 32, 0.14));
+}
+
+/* Scope chips — the full set of supported issues, no scroll section needed. */
+
+.hero__scope {
+  margin-top: clamp(2rem, 6vh, 3.5rem);
+  padding-block: 1.4rem 1.6rem;
+  border-top: 1px solid var(--border);
+}
+
+.hero__scope-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hero__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 0.95rem;
+  background: var(--color-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  color: var(--color-text);
+  box-shadow: 0 1px 2px rgba(59, 42, 32, 0.04);
+}
+
+.hero__chip-ur {
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    order: -1;
+  }
+
+  .hero-art__scales {
+    width: min(62%, 260px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__chip-ur {
+    display: none;
+  }
+}

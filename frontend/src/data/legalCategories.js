@@ -1,0 +1,233 @@
+/**
+ * Frontend mirror of backend/src/data/legal_categories.json.
+ *
+ * Laws are objects (never plain strings): { section, law_name, certainty, note }.
+ * `certainty` is either "confirmed" or "possible_fact_dependent" — the UI must
+ * never present a possible_fact_dependent reference as guaranteed.
+ */
+
+const legalCategories = [
+  {
+    id: "theft",
+    label_en: "Theft",
+    label_ur: "چوری",
+    label_roman: "Chori",
+    icon: "shield-alert",
+    workflow_type: "fir",
+    laws: [
+      {
+        section: "PPC §§ 378–382",
+        law_name: "Pakistan Penal Code",
+        certainty: "confirmed",
+        note: "Section 378 defines theft; §§ 379–382 prescribe the punishment, which varies with the circumstances (value of property, place, repeat offences).",
+      },
+    ],
+    complaint_authority: "Nearest Police Station (FIR)",
+    description_en:
+      "Theft means someone dishonestly took your movable property without your permission. In Pakistan this is a criminal offence: you report it at the nearest police station, where a First Information Report (FIR) is registered under the Pakistan Penal Code.",
+    next_steps: [
+      "Go to the nearest police station and ask them to register an FIR — do this as soon as possible.",
+      "Bring your CNIC and any evidence (CCTV footage, receipts, witness names, IMEI/serial number for a phone).",
+      "Ask for a copy of the FIR for your records.",
+      "If the police refuse to register the FIR, you may approach the SHO, the District Police Officer, or the provincial police complaint portal.",
+      "For a stolen phone, also ask your mobile operator to block the IMEI.",
+    ],
+  },
+  {
+    id: "fraud",
+    label_en: "Fraud / Cheating",
+    label_ur: "دھوکہ دہی / فراڈ",
+    label_roman: "Dhoka Dahi / Fraud",
+    icon: "file-warning",
+    workflow_type: "fir",
+    laws: [
+      {
+        section: "PPC §§ 415, 420",
+        law_name: "Pakistan Penal Code",
+        certainty: "possible_fact_dependent",
+        note: "Section 415 defines cheating; § 420 applies where property was handed over because of deliberate deception. Whether these sections apply depends on the specific facts of your case.",
+      },
+    ],
+    complaint_authority: "Nearest Police Station (FIR); FIA if the fraud happened online",
+    description_en:
+      "Fraud or cheating means someone deceived you — with a false promise, fake document, or lie — and because of that deception you handed over money or property. This is a criminal offence under the Pakistan Penal Code, and you can file an FIR. If it happened online, the FIA Cyber Crime Wing also handles it.",
+    next_steps: [
+      "Collect all evidence: agreements, receipts, payment records, messages, call logs.",
+      "File an FIR at the nearest police station; if the fraud happened online, also complain to the FIA Cyber Crime Wing.",
+      "If a bank account was involved, inform your bank immediately in writing and keep the acknowledgement.",
+      "Keep copies of everything you submit.",
+    ],
+  },
+  {
+    id: "criminal_breach_of_trust",
+    label_en: "Criminal Breach of Trust",
+    label_ur: "مجرمانہ خلافِ امانت",
+    label_roman: "Mujrimana Khilaf-e-Amanat",
+    icon: "handshake-broken",
+    workflow_type: "fir",
+    laws: [
+      {
+        section: "PPC §§ 405–409",
+        law_name: "Pakistan Penal Code",
+        certainty: "confirmed",
+        note: "Section 405 defines criminal breach of trust; §§ 406–409 prescribe punishment depending on the type of property and whether the offender was a banker, merchant, clerk, or public servant.",
+      },
+    ],
+    complaint_authority: "Nearest Police Station (FIR)",
+    description_en:
+      "Criminal breach of trust means you entrusted someone with money or property — to keep, use, or return — and they dishonestly misused it or refused to return it. This is different from a simple civil dispute; the dishonest misappropriation is what makes it criminal.",
+    next_steps: [
+      "Document the trust arrangement: written agreement, messages, receipts, or witnesses who knew about it.",
+      "Gather evidence showing the property was entrusted and then misused or not returned.",
+      "Send a written demand for return (this strengthens the record of dishonesty).",
+      "File an FIR at the nearest police station.",
+      "Consult a lawyer about a civil suit to recover the property alongside the criminal case.",
+    ],
+  },
+  {
+    id: "criminal_intimidation",
+    label_en: "Criminal Intimidation / Threats",
+    label_ur: "مجرمانہ دھمکیاں",
+    label_roman: "Mujrimana Dhamkiyan",
+    icon: "megaphone",
+    workflow_type: "fir",
+    laws: [
+      {
+        section: "PPC §§ 503, 506",
+        law_name: "Pakistan Penal Code",
+        certainty: "confirmed",
+        note: "Section 503 defines criminal intimidation; § 506 prescribes punishment — higher where the threat is to cause death or grievous hurt.",
+      },
+    ],
+    complaint_authority:
+      "Nearest Police Station (FIR); FIA Cyber Crime Wing if the threats are online",
+    description_en:
+      "Criminal intimidation means someone threatened to harm you, your reputation, or your property in order to scare or pressure you. Threats — including by phone or messages — are a criminal offence. If you are in immediate danger, contact the police (15) right away.",
+    next_steps: [
+      "Preserve all evidence: screenshots, recordings, messages, call logs — do not delete anything.",
+      "Do not respond to or engage with the person threatening you.",
+      "If you are in immediate danger, call 15 (Police) immediately.",
+      "File an FIR at the nearest police station; if the threats are online, also complain to the FIA Cyber Crime Wing.",
+      "Tell a family member or someone you trust so the threat is on record with others too.",
+    ],
+  },
+  {
+    id: "harassment",
+    label_en: "Harassment",
+    label_ur: "ہراسانی",
+    label_roman: "Harasani",
+    icon: "user-shield",
+    workflow_type: "complaint",
+    laws: [
+      {
+        section: "Protection against Harassment of Women at the Workplace Act, 2010",
+        law_name: "PEHA Act 2010",
+        certainty: "possible_fact_dependent",
+        note: "Applies to harassment at the workplace. Complaints go to the organisation's inquiry committee or the Ombudsperson — this is a separate route from an FIR.",
+      },
+      {
+        section: "PPC § 509",
+        law_name: "Pakistan Penal Code",
+        certainty: "possible_fact_dependent",
+        note: "Covers insulting the modesty of a woman, including in public places. Whether it applies depends on the specific facts of the incident.",
+      },
+    ],
+    complaint_authority:
+      "Police Station (FIR) for public places; Ombudsperson or employer's inquiry committee for the workplace",
+    description_en:
+      "Harassment means unwelcome sexual advances, comments, touching, following, or other conduct that violates your dignity. Where you complain depends on where it happened: at work there is a dedicated legal process (inquiry committee / Ombudsperson), while in public places you can file an FIR at a police station.",
+    next_steps: [
+      "Write down every incident with dates, times, places, and names of any witnesses.",
+      "For workplace harassment, complain to your organisation's inquiry committee or the Ombudsperson (Federal or provincial).",
+      "For harassment in a public place, file an FIR at the nearest police station.",
+      "Save any evidence: messages, recordings, photos.",
+      "You can also call a women's helpline such as 1043 (Punjab) or 15 (Police) for immediate support.",
+    ],
+  },
+  {
+    id: "cyberstalking",
+    label_en: "Cyberstalking / Online Harassment",
+    label_ur: "سائبر ہراسانی",
+    label_roman: "Cyber Harasani",
+    icon: "globe-alert",
+    workflow_type: "complaint",
+    laws: [
+      {
+        section: "PECA 2016 §§ 20–24",
+        law_name: "Prevention of Electronic Crimes Act",
+        certainty: "possible_fact_dependent",
+        note: "This group of sections covers different electronic offences — for example § 20 concerns cyberstalking. Which section applies depends on the exact conduct, so these must not be treated as automatically applicable as a group. Please confirm with a qualified lawyer.",
+      },
+    ],
+    complaint_authority: "FIA Cyber Crime Wing",
+    description_en:
+      "Cyberstalking and online harassment include repeated unwanted messages, following or monitoring you online, fake profiles, morphed or edited photos, sexual harassment through digital means, and online blackmail. The FIA Cyber Crime Wing is the dedicated authority for these complaints.",
+    next_steps: [
+      "Do not delete anything — take screenshots of messages, profiles, and posts, with dates visible.",
+      "Report and block the account on the platform itself (Facebook, Instagram, WhatsApp, etc.).",
+      "File a complaint with the FIA Cyber Crime Wing online (complaint.fia.gov.pk) or at the nearest FIA cybercrime reporting centre.",
+      "If you feel physically unsafe, also file an FIR at the nearest police station.",
+    ],
+  },
+  {
+    id: "online_scam",
+    label_en: "Online Scam",
+    label_ur: "آن لائن دھوکہ",
+    label_roman: "Online Dhoka",
+    icon: "credit-card-alert",
+    workflow_type: "complaint",
+    laws: [
+      {
+        section: "PECA 2016 § 14",
+        law_name: "Prevention of Electronic Crimes Act",
+        certainty: "possible_fact_dependent",
+        note: "Concerns unauthorized use of identity information. It applies to some online scams (for example those involving fake accounts) — not to every online scam. Do not treat it as automatically applicable.",
+      },
+      {
+        section: "PPC § 420",
+        law_name: "Pakistan Penal Code",
+        certainty: "possible_fact_dependent",
+        note: "Cheating and dishonestly inducing delivery of property — applies only if deliberate deception in taking your money can be shown on the facts of your case.",
+      },
+    ],
+    complaint_authority: "FIA Cyber Crime Wing / Nearest Police Station",
+    description_en:
+      "An online scam is when someone deceives you through a website, app, social media, or a phone call to take your money — fake shops, fake job offers, investment schemes, or phishing. Keep every record: it makes the complaint much stronger.",
+    next_steps: [
+      "Preserve all evidence: screenshots, chat history, URLs, transaction records, the scammer's number or account details.",
+      "If you transferred money, inform your bank / mobile-wallet provider immediately and ask them to freeze or recall the transfer.",
+      "File a complaint with the FIA Cyber Crime Wing (complaint.fia.gov.pk) or at the nearest FIA office.",
+      "Also report the account or page on the platform where you found the scammer.",
+      "Never pay any 'fee' to someone claiming they can recover your money — that is usually a second scam.",
+    ],
+  },
+  {
+    id: "lost_property",
+    label_en: "Lost Property / Documents",
+    label_ur: "کھوئی ہوئی ملکیت / دستاویزات",
+    label_roman: "Khoi Hui Milkiyat / Dastawezat",
+    icon: "file-search",
+    workflow_type: "loss_report",
+    laws: [
+      {
+        section: "PPC § 379",
+        law_name: "Pakistan Penal Code",
+        certainty: "possible_fact_dependent",
+        note: "Applies only if theft is specifically alleged by the complainant. An ordinary loss is not a crime — a loss report is an administrative record, not a criminal FIR.",
+      },
+    ],
+    complaint_authority:
+      "Nearest Police Station (Loss Report); NADRA for CNIC; Directorate General of Immigration & Passports for a passport",
+    description_en:
+      "Losing property or documents (CNIC, passport, wallet, phone) is usually not a crime by itself. You can get a loss report from the police — this is not an FIR. The loss report helps you obtain replacements and protects you if the document is misused later.",
+    next_steps: [
+      "Go to the nearest police station and request a Loss Report (not an FIR) for the lost item.",
+      "For a lost CNIC, report to NADRA and apply for a duplicate.",
+      "For a lost passport, contact the Directorate General of Immigration & Passports (dgip.gov.pk).",
+      "For a lost phone, ask your mobile operator to block the SIM and IMEI.",
+      "If you later find clear evidence that it was actually stolen, you can file a theft FIR at that point.",
+    ],
+  },
+];
+
+export default legalCategories;

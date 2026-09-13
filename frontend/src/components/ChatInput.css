@@ -1,0 +1,88 @@
+.chat-input__row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.65rem;
+  background: var(--color-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  padding: 0.55rem 0.55rem 0.55rem 1rem;
+  box-shadow: var(--shadow-soft);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.chat-input__row:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--chambray) 16%, transparent),
+    var(--shadow-soft);
+}
+
+.chat-input__field {
+  flex: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  padding: 0.5rem 0;
+  font-size: 0.975rem;
+  line-height: 1.55;
+  max-height: 160px;
+  color: var(--color-text);
+}
+
+.chat-input__field::placeholder {
+  color: color-mix(in srgb, var(--ink-soft) 65%, transparent);
+}
+
+.chat-input__field:disabled {
+  opacity: 0.6;
+}
+
+.chat-input__send {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--white);
+  flex-shrink: 0;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.chat-input__send:hover:not([disabled]) {
+  background: var(--color-primary-hover);
+  transform: scale(1.04);
+}
+
+.chat-input__send[disabled] {
+  background: var(--border-strong);
+  cursor: not-allowed;
+}
+
+.chat-input__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: chat-input-spin 720ms linear infinite;
+}
+
+@keyframes chat-input-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.chat-input__hint {
+  margin: 0.45rem 0.35rem 0;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .chat-input__hint {
+    display: none;
+  }
+}

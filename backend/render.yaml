@@ -1,0 +1,18 @@
+# Render Blueprint for Insaaf Aasan backend
+# Deploys the Express API from the backend/ folder.
+services:
+  - type: web
+    name: insaaf-aasan-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: AI_PROVIDER
+        value: mock
+      - key: ALLOWED_ORIGINS
+        value: https://insaaf-aasan.vercel.app

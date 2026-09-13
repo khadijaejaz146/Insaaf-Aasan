@@ -1,0 +1,608 @@
+/* ==========================================================================
+   Insaaf Aasan — Landing / Splash Page
+   Warm brown + cream legal aesthetic. Single viewport, no scroll.
+   All styles scoped to .splash — other pages are untouched.
+   ========================================================================== */
+
+.splash {
+  /* ---- Palette (scoped) ---- */
+  --s-dark: #3b2115;
+  --s-deep: #24130c;
+  --s-wood: #6b4226;
+  --s-warm: #8a5a35;
+  --s-cream: #f7eedc;
+  --s-light: #fff9ee;
+  --s-beige: #e8d8be;
+  --s-bronze: #b8894a;
+  --s-text: #2a1a12;
+  --s-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+
+  height: 100vh;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 78% 22%, rgba(184, 137, 74, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 50% at 12% 88%, rgba(107, 66, 38, 0.06) 0%, transparent 60%),
+    var(--s-cream);
+  color: var(--s-text);
+  font-family: var(--font-body);
+  position: relative;
+}
+
+/* ============================== Header =============================== */
+
+.splash__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem clamp(1.25rem, 4vw, 2.5rem);
+  position: relative;
+  z-index: 2;
+}
+
+.splash__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.splash__logo {
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(59, 33, 21, 0.22));
+}
+
+.splash__brand-name {
+  font-family: var(--s-serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--s-dark);
+  line-height: 1.15;
+  display: flex;
+  flex-direction: column;
+}
+
+.splash__af {
+  color: var(--s-wood);
+}
+
+.splash__brand-urdu {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin-top: 0.08rem;
+  font-size: 0.82rem;
+}
+
+.splash__brand-urdu .urdu {
+  font-size: 0.95rem;
+  color: var(--s-bronze);
+  line-height: 1.5;
+}
+
+.splash__brand-tagline {
+  font-style: italic;
+  color: var(--s-warm);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+}
+
+.splash__lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--s-beige);
+  border-radius: 999px;
+  background: rgba(255, 249, 238, 0.65);
+  color: var(--s-dark);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 180ms, background 180ms;
+  backdrop-filter: blur(4px);
+}
+
+.splash__lang:hover {
+  border-color: var(--s-bronze);
+  background: var(--s-light);
+}
+
+.splash__lang .urdu {
+  font-size: 0.92rem;
+}
+
+/* ============================== Body =============================== */
+
+.splash__body {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.splash__hero {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Label ---- */
+.splash__label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--s-bronze);
+  margin-bottom: 0.75rem;
+}
+
+.splash__label-line {
+  flex: 0 0 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--s-bronze), transparent);
+  opacity: 0.45;
+}
+
+/* ---- Heading ---- */
+.splash__heading {
+  font-family: var(--s-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--s-dark);
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.splash__heading-accent {
+  color: var(--s-wood);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ---- Subtitle ---- */
+.splash__subtitle {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--s-warm);
+  max-width: 28rem;
+  margin-bottom: 1.4rem;
+}
+
+/* ---- CTA ---- */
+.splash__cta-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.splash__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.6rem;
+  background: var(--s-dark);
+  color: var(--s-cream);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  border: 1.5px solid rgba(184, 137, 74, 0.55);
+  box-shadow:
+    0 4px 16px rgba(59, 33, 21, 0.18),
+    0 1px 3px rgba(59, 33, 21, 0.1);
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+  align-self: flex-start;
+}
+
+.splash__cta:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 28px rgba(59, 33, 21, 0.26),
+    0 2px 6px rgba(59, 33, 21, 0.12);
+  background: var(--s-deep);
+  color: var(--s-cream);
+}
+
+.splash__cta-arrow {
+  transition: transform 200ms ease;
+}
+
+.splash__cta:hover .splash__cta-arrow {
+  transform: translateX(3px);
+}
+
+.splash__cta-sub {
+  font-size: 0.78rem;
+  color: var(--s-warm);
+  font-style: italic;
+  padding-left: 0.2rem;
+}
+
+/* ---- Visual ---- */
+.splash__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.splash__visual-frame {
+  position: relative;
+  width: min(100%, 400px);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(36, 19, 12, 0.18),
+    0 6px 20px rgba(36, 19, 12, 0.1);
+  border: 2px solid rgba(184, 137, 74, 0.18);
+}
+
+.splash__visual-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 40px rgba(36, 19, 12, 0.06);
+  pointer-events: none;
+}
+
+.splash__visual-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* ============================== Features =============================== */
+
+.splash__features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  padding: 0.7rem clamp(1.25rem, 4vw, 2.5rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.splash__card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--s-light);
+  border: 1px solid var(--s-beige);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 200ms, transform 200ms;
+}
+
+.splash__card:hover {
+  box-shadow: 0 6px 20px rgba(59, 33, 21, 0.08);
+  transform: translateY(-1px);
+}
+
+.splash__card-accent {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--s-bronze), transparent);
+  opacity: 0.3;
+}
+
+.splash__card-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--s-dark);
+  color: var(--s-cream);
+}
+
+.splash__card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.splash__card-title {
+  font-family: var(--s-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--s-dark);
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+.splash__card-desc {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--s-warm);
+}
+
+/* ============================== Trust strip =============================== */
+
+.splash__trust {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 0.6rem clamp(1.25rem, 4vw, 2.5rem);
+  background: linear-gradient(135deg, var(--s-deep), var(--s-dark));
+  color: var(--s-beige);
+  position: relative;
+  z-index: 1;
+}
+
+.splash__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+}
+
+.splash__trust-icon {
+  display: flex;
+  color: var(--s-bronze);
+  opacity: 0.8;
+}
+
+.splash__trust-title {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--s-cream);
+  line-height: 1.2;
+}
+
+.splash__trust-desc {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--s-beige);
+  opacity: 0.7;
+  line-height: 1.2;
+}
+
+/* ============================== Animations =============================== */
+
+@keyframes splash-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.splash .fade-up {
+  animation: splash-fade-up 550ms cubic-bezier(0.22, 0.8, 0.32, 1) both;
+}
+
+/* ============================== Responsive: Tablet =============================== */
+
+@media (max-width: 1024px) {
+  .splash__heading {
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  }
+
+  .splash__subtitle {
+    font-size: 0.88rem;
+  }
+
+  .splash__visual-frame {
+    width: min(100%, 320px);
+    border-radius: 16px;
+  }
+
+  .splash__card {
+    padding: 0.7rem 0.85rem;
+    gap: 0.6rem;
+  }
+
+  .splash__card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .splash__card-title {
+    font-size: 0.8rem;
+  }
+
+  .splash__card-desc {
+    font-size: 0.7rem;
+  }
+}
+
+/* ============================== Responsive: Short viewport =============================== */
+
+@media (max-height: 720px) {
+  .splash__header {
+    padding: 0.55rem clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .splash__label {
+    margin-bottom: 0.45rem;
+    font-size: 0.62rem;
+  }
+
+  .splash__heading {
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .splash__subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .splash__cta {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.88rem;
+  }
+
+  .splash__visual-frame {
+    width: min(100%, 260px);
+  }
+
+  .splash__features {
+    padding: 0.45rem clamp(1.25rem, 4vw, 2.5rem);
+    gap: 0.55rem;
+  }
+
+  .splash__card {
+    padding: 0.55rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .splash__card-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .splash__trust {
+    padding: 0.45rem clamp(1.25rem, 4vw, 2.5rem);
+  }
+}
+
+/* ============================== Responsive: Mobile =============================== */
+
+@media (max-width: 768px) {
+  .splash__body {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 0 1.2rem;
+    justify-content: center;
+  }
+
+  .splash__hero {
+    align-items: center;
+    text-align: center;
+  }
+
+  .splash__subtitle {
+    max-width: 100%;
+  }
+
+  .splash__subtitle-br {
+    display: none;
+  }
+
+  .splash__cta {
+    align-self: center;
+  }
+
+  .splash__cta-sub {
+    text-align: center;
+  }
+
+  .splash__visual-frame {
+    width: min(55%, 180px);
+    border-radius: 14px;
+  }
+
+  .splash__heading {
+    font-size: 1.65rem;
+  }
+
+  .splash__label-line {
+    flex: 0 0 1.2rem;
+  }
+
+  .splash__brand-tagline {
+    display: none;
+  }
+
+  .splash__features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .splash__trust {
+    flex-wrap: wrap;
+    gap: 0.4rem 0.8rem;
+    justify-content: center;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .splash__trust-item {
+    font-size: 0.68rem;
+  }
+}
+
+/* ============================== Responsive: Small mobile =============================== */
+
+@media (max-width: 480px) {
+  .splash__heading {
+    font-size: 1.4rem;
+  }
+
+  .splash__subtitle {
+    font-size: 0.82rem;
+  }
+
+  .splash__cta {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .splash__visual-frame {
+    width: min(45%, 140px);
+  }
+
+  .splash__brand-name {
+    font-size: 0.95rem;
+  }
+
+  .splash__lang {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .splash__card-desc {
+    font-size: 0.65rem;
+  }
+
+  .splash__card-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ============================== Reduced motion =============================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .splash .fade-up {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .splash__cta,
+  .splash__cta-arrow,
+  .splash__card,
+  .splash__lang {
+    transition: none !important;
+  }
+}

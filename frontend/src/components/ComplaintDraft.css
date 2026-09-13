@@ -1,0 +1,118 @@
+.draft {
+  background: var(--color-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 1.3rem;
+}
+
+.draft__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--border-strong);
+  margin-bottom: 1.2rem;
+}
+
+.draft__toolbar-hint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.draft__actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.draft__grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.9rem 1.1rem;
+}
+
+.draft__field--wide {
+  grid-column: 1 / -1;
+}
+
+.draft__label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.draft input[type="text"],
+.draft textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: var(--parchment);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.925rem;
+  line-height: 1.55;
+  color: var(--color-text);
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.draft textarea {
+  resize: vertical;
+  min-height: 2.8rem;
+}
+
+.draft input:focus,
+.draft textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: var(--white);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--chambray) 14%, transparent);
+}
+
+.draft__section {
+  border: none;
+  padding: 0;
+  margin: 1.3rem 0 0;
+}
+
+.draft__section-title {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  padding: 0;
+  margin-bottom: 0.65rem;
+}
+
+.draft__section-hint {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: -0.35rem 0 0.5rem;
+}
+
+.draft__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.9rem 1.1rem;
+}
+
+.draft__evidence,
+.draft__signature {
+  font-family: var(--font-body);
+}
+
+@media (max-width: 720px) {
+  .draft__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .draft__facts {
+    grid-template-columns: 1fr;
+  }
+}

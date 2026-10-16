@@ -1,0 +1,58 @@
+[
+  {
+    "id": "fia_complaints",
+    "name": "FIA — Public Services Portal (Cyber Crime Complaints)",
+    "url": "https://complaint.fia.gov.pk/",
+    "categories": ["cyberstalking", "online_scam", "fraud", "criminal_intimidation"],
+    "description": "Official Federal Investigation Agency portal for registering complaints with the Cyber Crime Wing, including online fraud, scams, and online harassment.",
+    "source_type": "government"
+  },
+  {
+    "id": "fospah",
+    "name": "FOSPAH — Federal Ombudsperson Secretariat for Protection against Harassment",
+    "url": "https://fospah.gov.pk/",
+    "categories": ["harassment"],
+    "description": "Official federal body that receives and decides harassment complaints, including workplace harassment under the Protection against Harassment of Women at the Workplace Act 2010.",
+    "source_type": "government"
+  },
+  {
+    "id": "nadra",
+    "name": "NADRA — National Database and Registration Authority",
+    "url": "https://www.nadra.gov.pk/",
+    "categories": ["lost_property"],
+    "description": "Official authority for CNIC and identity documents — apply for a duplicate CNIC and report misuse of lost identity documents.",
+    "source_type": "government"
+  },
+  {
+    "id": "dgip",
+    "name": "Directorate General of Immigration & Passports",
+    "url": "https://www.dgip.gov.pk/",
+    "categories": ["lost_property"],
+    "description": "Official authority for Pakistani passports, including guidelines and the process for replacing a lost passport.",
+    "source_type": "government"
+  },
+  {
+    "id": "punjab_police",
+    "name": "Punjab Police",
+    "url": "https://punjabpolice.gov.pk/",
+    "categories": ["theft", "fraud", "criminal_breach_of_trust", "criminal_intimidation", "harassment", "lost_property"],
+    "description": "Official Punjab Police portal — online complaint registration, FIR checklist, and information about your nearest police station.",
+    "source_type": "government"
+  },
+  {
+    "id": "sindh_police",
+    "name": "Sindh Police",
+    "url": "https://www.sindhpolice.gov.pk/",
+    "categories": ["theft", "fraud", "criminal_breach_of_trust", "criminal_intimidation", "harassment", "lost_property"],
+    "description": "Official Sindh Police portal with the IGP Complaint Management System for registering and tracking complaints.",
+    "source_type": "government"
+  },
+  {
+    "id": "pakistan_code",
+    "name": "Pakistan Code — Federal Laws Portal",
+    "url": "https://www.pakistancode.gov.pk/",
+    "categories": ["theft", "fraud", "criminal_breach_of_trust", "criminal_intimidation", "harassment", "cyberstalking", "online_scam", "lost_property"],
+    "description": "Official Government of Pakistan repository of federal laws — read the actual text of the Pakistan Penal Code and other statutes.",
+    "source_type": "government"
+  }
+]
